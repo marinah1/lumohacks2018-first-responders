@@ -1,1 +1,0 @@
-# lumohacks2018-first-responders
