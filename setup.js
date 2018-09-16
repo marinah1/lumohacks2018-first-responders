@@ -3,7 +3,7 @@ var app = express();
 //var path = require('path');
 var serverIndex = require('serve-index');
 var http = require('http');
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 
 app.use(express.json());
@@ -15,7 +15,7 @@ var options = {
   dotfiles: 'ignore',
   etag: false,
   extensions: ['htm', 'html'],
-  index: "setup.html"
+  index: "pages/setup.html"
 }
 
 
