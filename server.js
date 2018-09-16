@@ -4,7 +4,6 @@ var app = express();
 /*---------
   CONTROLLERS
 -----------*/
-var moods = require('./routes/routes_moods');
 
 var serverIndex = require('serve-index');
 var http = require('http');
@@ -73,7 +72,7 @@ app.all('/', function(req, res, next) {
   console.log('Root Folder...')
   next();
 })
-app.use('/', express.static('./Files', options));
+app.use('/', express.static('./files', options));
 
 app.post('/checked-in', function(req, res, next){
  console.log("worked inside check-in");
