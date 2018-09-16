@@ -53,39 +53,3 @@ function formMoodQuestions(){
 
    document.getElementById("mood-questions-btn").remove();
 }
-
-/*--------
-      onclick funtion to save selected mood data
----------*/
-function submitForms(){
-  document.getElementById("form1").submit();
-  document.getElementById("form2").submit();
-
- //grab id of selected mood item --
-  var mood = document.getElementsByName('mood');
-  var mood_id = "";
-  mood.forEach(function(item){
-    if(item.checked){
-      //console.log(item);
-      mood_id = item.id;
-    }
-  });
-  var mood_data = 'mood_id=' + mood_id;
-
-
-  var xhrParams = {
-    mood_id : mood_id
-  };
-
-  ajaxPost(
-    "/check",
-    xhrParams,
-    function() {
-      // Go to next page automatically in browser
-      alert("Successfully submitted mood :)")
-    },
-    function(error) {
-      alert("Error in submitting form, please try again...");
-    }
-  );
-}
