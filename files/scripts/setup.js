@@ -1,20 +1,19 @@
-function submitSetup(attempts = 0) {
-  if (Object.keys(cart).length === 0) {
-    return;
-  }
+var network_contacts = [];
 
-  // Show loading status + disable checkout button
-  var checkoutButton = document.getElementById("checkoutButton");
-  checkoutButton.disabled = true;
-  checkoutButton.classList.add("loading");
+function submitSetup() {
+  console.log("clicked button");
+  var superviser = document.getElementById("supervisor-name").value;
+  console.log(superviser);
+  // network_contacts.push({"support-type" : "superviser", "name": superviser.text} )
+ //  var therapist = document.getElementById("superviser-input");
+ //  var friend = document.getElementById("friend-family-input");
 
   var xhrParams = {
     user: "defaultuser"
-    contacts: JSON.stringify(network_contacts)
   };
 
   ajaxPost(
-    setupUrl,
+    "localhost:8080/hello",
     xhrParams,
     function() {
       // Go to next page automatically in browser
@@ -45,3 +44,4 @@ function ajaxPost(url, params, successCallback, errorCallback) {
 
   xhr.send(JSON.stringify(params));
 }
+
