@@ -25,23 +25,43 @@ function submitSetup() {
 }
 
 
-function ajaxPost(url, params, successCallback, errorCallback) {
-  var xhr = new XMLHttpRequest();
-  xhr.timeout = 2000;
 
-  xhr.open("POST", url);
-  xhr.setRequestHeader("Content-Type", "application/json");
 
-  xhr.ontimeout = errorCallback;
-  xhr.onerror = errorCallback;
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      successCallback(xhr.responseText);
-    } else {
-      errorCallback();
+/*--------
+      onclick funtion to save selected mood data
+---------*/
+function submitForms(){
+  document.getElementById("form1").submit();
+  document.getElementById("form2").submit();
+
+ //grab id of selected mood item --
+  var mood = document.getElementsByName('mood');
+  var mood_id = "";
+  mood.forEach(function(item){
+    if(item.checked){
+      //console.log(item);
+      mood_id = item.id;
     }
+  });
+  var mood_data = 'mood_id=' + mood_id;
+
+
+  var xhrParams = {
+    mood_id : mood_id
   };
 
-  xhr.send(JSON.stringify(params));
+  ajaxPost(
+    "/check",
+    xhrParams,
+    function() {
+      // Go to next page automatically in browser
+      alert("Successfully submitted mood :)")
+    },
+    function(error) {
+      alert("Error in submitting form, please try again...");
+    }
+  );
 }
+
+
 

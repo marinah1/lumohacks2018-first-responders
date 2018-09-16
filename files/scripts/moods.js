@@ -72,17 +72,20 @@ function submitForms(){
   });
   var mood_data = 'mood_id=' + mood_id;
 
-  $.ajax({
-    method: "post",
-    url: "/checked-in",
-    data: mood_data,
-    success: function() {
-      console.log("success");
-      alert("mood updated!");
-    },
-    error: function() {
-      console.log("failed");
-    }
-  });
 
+  var xhrParams = {
+    mood_id : mood_id
+  };
+
+  ajaxPost(
+    "/check",
+    xhrParams,
+    function() {
+      // Go to next page automatically in browser
+      alert("Successfully submitted mood :)")
+    },
+    function(error) {
+      alert("Error in submitting form, please try again...");
+    }
+  );
 }
