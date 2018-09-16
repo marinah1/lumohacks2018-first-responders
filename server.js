@@ -7,10 +7,7 @@
 /*---------
   CONTROLLERS
 -----------*/
-<<<<<<< HEAD
 
-=======
->>>>>>> d6f14bd86236ab5a4939854247ea456a448ec62b
 // if(dd<10) {
 //     dd = '0'+dd
 // }
@@ -29,7 +26,7 @@ var options = {
   index: "moods.html"
 }
 
-<<<<<<< HEAD
+
 
 // /*--------
 //   DATABASE - NOSQL MONGODB WITH USE OF NPM MONGOOSE
@@ -91,8 +88,7 @@ var options = {
 // http.createServer(app).listen(port);
 // console.log('running on port:', port);
 
-=======
->>>>>>> d6f14bd86236ab5a4939854247ea456a448ec62b
+
 var assert = require("assert");
 var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
