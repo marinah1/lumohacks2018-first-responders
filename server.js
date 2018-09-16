@@ -35,8 +35,22 @@ var PORT = process.env.PORT || 5000;
 var initializeServer = function(db) {
   var app = express();
   app.use(parseBody());
-app.use('/', express.static('./files', options));
+	app.use('/', express.static('./files', options));
 
+	app.post('/setup', function(req, res){
+	 // console.log("worked inside check-in");
+	 // console.log(req);
+	 // mood = {};
+	 // var moodText = req.jsonBody.mood_id;
+	 // var collection = db.collection("moods");
+	 // mood["mood_id"] = moodText;
+	 // collection.insert(mood, function(err, result) {
+  //       console.log("Inserted 1 document into the collection");
+  //     });
+  //      res.status(200);
+  //      res.send("Checkout success!");
+  //      return;
+  });
 
   app.post('/check', function(req, res){
 	 console.log("worked inside check-in");
