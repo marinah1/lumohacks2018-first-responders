@@ -24,16 +24,16 @@
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet">
 
     <script src="/scripts/directory.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCctftEqDhl_Rmj4tkW9lsZui3o9Mn9nA0&callback=myMap">
-    </script>
+  <!--  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCctftEqDhl_Rmj4tkW9lsZui3o9Mn9nA0&callback=initMap">
+  </script> -->
 </head>
 
-<body>
+<body onload="initMap();">
 	<nav class="navbar navbar-expand-lg fixed-top bg-primary" color-on-scroll="300">
 			<div class="container">
 		<div class="navbar-translate">
-			<a class="navbar-brand" href="https://www.creative-tim.com">BLUU</a>
+			<a class="navbar-brand" href="">BLUU</a>
 						<button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-bar"></span>
 				<span class="navbar-toggler-bar"></span>
@@ -68,29 +68,19 @@
 	</nav>
 
   <h2 class="text-center section">Find A Professional</h2>
-            <div class="section landing-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 ml-auto mr-auto">
-                           <div id="Googlemap" width="100%" height="100%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div  height="100%" width="100%" class="col-md-8 ml-auto mr-auto map">
+     <iframe class="fra" align="center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.910469289874!2d-122.92206661994958!3d49.278093679432075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548679c0857a2227%3A0x506c3f6e30b55b!2sSimon+Fraser+University!5e0!3m2!1sen!2sca!4v1537127361293" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
 	<footer class="footer section-dark">
 		<div class="container">
 			<div class="row">
 				<nav class="footer-nav">
-					<ul>
-						<li><a href="https://www.creative-tim.com">Creative Tim</a></li>
-						<li><a href="http://blog.creative-tim.com">Blog</a></li>
-						<li><a href="https://www.creative-tim.com/license">Licenses</a></li>
-					</ul>
+
 				</nav>
 				<div class="credits ml-auto">
 					<span class="copyright">
-						© <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+						© <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i>
 					</span>
 				</div>
 			</div>
