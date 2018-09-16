@@ -7,7 +7,10 @@
 /*---------
   CONTROLLERS
 -----------*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> d6f14bd86236ab5a4939854247ea456a448ec62b
 // if(dd<10) {
 //     dd = '0'+dd
 // }
@@ -26,6 +29,7 @@ var options = {
   index: "moods.html"
 }
 
+<<<<<<< HEAD
 
 // /*--------
 //   DATABASE - NOSQL MONGODB WITH USE OF NPM MONGOOSE
@@ -87,6 +91,8 @@ var options = {
 // http.createServer(app).listen(port);
 // console.log('running on port:', port);
 
+=======
+>>>>>>> d6f14bd86236ab5a4939854247ea456a448ec62b
 var assert = require("assert");
 var express = require("express");
 var mongoClient = require("mongodb").MongoClient;
@@ -102,8 +108,22 @@ var PORT = process.env.PORT || 8080;
 var initializeServer = function(db) {
   var app = express();
   app.use(parseBody());
-app.use('/', express.static('./files', options));
+	app.use('/', express.static('./files', options));
 
+	app.post('/setup', function(req, res){
+	 // console.log("worked inside check-in");
+	 // console.log(req);
+	 // mood = {};
+	 // var moodText = req.jsonBody.mood_id;
+	 // var collection = db.collection("moods");
+	 // mood["mood_id"] = moodText;
+	 // collection.insert(mood, function(err, result) {
+  //       console.log("Inserted 1 document into the collection");
+  //     });
+  //      res.status(200);
+  //      res.send("Checkout success!");
+  //      return;
+  });
 
   app.post('/check', function(req, res){
 	 console.log("worked inside check-in");

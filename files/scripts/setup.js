@@ -2,14 +2,19 @@ var network_contacts = [];
 
 function submitSetup() {
   console.log("clicked button");
-  var superviser = document.getElementById("supervisor-name").value;
-  console.log(superviser);
-  // network_contacts.push({"support-type" : "superviser", "name": superviser.text} )
- //  var therapist = document.getElementById("superviser-input");
- //  var friend = document.getElementById("friend-family-input");
-
+  var supervisor_name = document.getElementById("supervisor-name").value;
+  var supervisor_phone = document.getElementById("supervisor-phone").value;
+  var supervisor_email = document.getElementById("supervisor-email").value;
+  var therapist_name = document.getElementById("therapist-name").value;
+  var therapist_phone = document.getElementById("therapist-phone").value;
+  var therapist_email = document.getElementById("therapist-email").value;
+  var friendfam_name = document.getElementById("friend-family-name").value;
+  var friendfam_phone = document.getElementById("friend-family-phone").value;
+  var friendfam_email = document.getElementById("friend=family-email").value;
   var xhrParams = {
-    user: "defaultuser"
+    supervisor : {"supervisor-name" : supervisor_name, "supervisor-phone" : supervisor_phone, "supervisor-email" : supervisor_email},
+    therapist : {"therapist-name" : therapist_name, "therapist-phone" : therapist_phone, "therapist-email" : therapist_email},
+    friendfam : {"friend-fam-name" : friendfam_name, "friend-fam-phone" : friendfam_phone, "friend-fam-email" : supervisor_email}
   };
 
   ajaxPost(
